@@ -5,6 +5,7 @@ metadata:
   labels:
     app: voting-app
     tier: front
+    type: python
 spec:
   containers:
     - name: voting-app-container

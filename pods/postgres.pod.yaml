@@ -1,0 +1,13 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: postgres-db
+  labels:
+    app: voting-app
+    tier: backend
+    type: postgres-db
+
+spec:
+  containers:
+    - name: postgres-container
+      image: postgres:alpine
