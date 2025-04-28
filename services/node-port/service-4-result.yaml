@@ -1,7 +1,7 @@
 apiVersion: v1
 kind: Service
 metadata:
-  name: service-4-result
+  name: get-to-result
 spec:
   type: NodePort
   ports:
@@ -10,5 +10,5 @@ spec:
       nodePort: 30001
   selector:
     app: voting-app
-    tier: frontend
-    type: result
+    tier: front
+    type: nodejs

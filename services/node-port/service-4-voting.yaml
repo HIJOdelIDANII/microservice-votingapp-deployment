@@ -1,7 +1,7 @@
 apiVersion: v1
 kind: Service
 metadata:
-  name: service-4-voting
+  name: get-to-vote
 spec:
   type: NodePort
   ports:
@@ -10,5 +10,5 @@ spec:
       nodePort: 30000
   selector:
     app: voting-app
-    tier: frontend
+    tier: front
     type: python

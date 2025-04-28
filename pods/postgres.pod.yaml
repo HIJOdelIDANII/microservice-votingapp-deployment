@@ -10,6 +10,13 @@ metadata:
 spec:
   containers:
     - name: postgres-container
-      image: postgres:alpine
+      image: postgres
       ports:
         - containerPort: 5432
+      env:
+        - name: POSTGRES_PASSWORD
+          value: "postgres"
+        - name: POSTGRES_USER 
+          value: "postgres"
+        - name: POSTGRES_INITDB_ARGS
+          value: "--auth-host=md5"
