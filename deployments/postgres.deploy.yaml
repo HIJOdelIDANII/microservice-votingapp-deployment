@@ -1,0 +1,31 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: postgres-deployment
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: voting-app
+      tier: backend
+      type: postgres-db
+  template:
+    metadata:
+      name: postgres-db-pod
+      labels:
+        app: voting-app
+        tier: backend
+        type: postgres-db
+    spec:
+      containers:
+        - name: postgres-container
+          image: postgres
+          ports:
+            - containerPort: 5432
+          env:
+            - name: POSTGRES_PASSWORD
+              value: "postgres"
+            - name: POSTGRES_USER 
+              value: "postgres"
+            - name: POSTGRES_INITDB_ARGS
+              value: "--auth-host=md5"
